@@ -1,0 +1,8 @@
+<svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="160" fill="white"/>
+  <circle cx="80" cy="80" r="72" fill="#0f66ad"/>
+  <circle cx="80" cy="80" r="66" stroke="white" stroke-width="6" fill="none"/>
+  <text x="80" y="96" text-anchor="middle" font-size="54" font-family="Times New Roman, serif" font-style="italic" fill="white">EG</text>
+  <text x="200" y="72" font-size="52" font-family="Times New Roman, serif" font-weight="700" fill="#224d87" letter-spacing="1">EMINOT</text>
+  <text x="240" y="128" font-size="52" font-family="Times New Roman, serif" font-weight="700" fill="#224d87" letter-spacing="1">LIFESCIENCES</text>
+</svg>
