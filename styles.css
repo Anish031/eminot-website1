@@ -33,10 +33,15 @@ body {
   padding: 14px 0;
 }
 .logo {
-  font-weight: 800;
-  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
-.logo span { display: block; letter-spacing: 1px; }
+.logo img {
+  height: 62px;
+  width: auto;
+  display: block;
+}
 .menu {
   display: flex;
   list-style: none;
@@ -159,6 +164,7 @@ h2 { font-size: 42px; margin: 6px 0 14px; color: #0d2d56; }
 @media (max-width: 960px) {
   .topbar-wrap { flex-direction: column; gap: 6px; }
   .menu { display: none; }
+  .logo img { height: 52px; }
   .hero-content, .about, .card-grid.three, .card-grid.four, .footer-grid, .stats-grid, .vision-grid {
     grid-template-columns: 1fr;
   }
