@@ -13,7 +13,7 @@
   <header>
     <div class="topbar">
       <div class="container topbar-wrap">
-        <div class="left">📞 +91 98765 43210 &nbsp; | &nbsp; ✉ info@eminotlifesciences.com</div>
+        <div class="left">📞 +91 98765 43210 &nbsp; | &nbsp; ✉ sales@eminotlifesciences.com</div>
         <div class="right">Serving Karnataka & Beyond &nbsp; | &nbsp; Scientific Solutions You Can Trust</div>
       </div>
     </div>
@@ -54,7 +54,7 @@
         <article><div class="hero-icon" aria-hidden="true">⚙️</div><h3>Instruments</h3><p>Bench-top to high-end instruments and equipment.</p></article>
         <article><div class="hero-icon" aria-hidden="true">🧬</div><h3>Custom Services</h3><p>Gene synthesis, sequencing & scientific support services.</p></article>
       </div>
-    </details>
+    </div>
   </section>
 
   <section id="about" class="about container section-gap">
@@ -88,7 +88,7 @@
           <p>To establish Eminot as a globally recognized organization with a strong market presence and a diverse, growing clientele.</p>
         </article>
       </div>
-    </details>
+    </div>
   </section>
 
   <section class="stats">
@@ -149,7 +149,7 @@
           <ul><li>PCR Systems</li><li>Gel Documentation</li><li>Automated Pipettors</li><li>Bioprocessing</li><li>Flow Cytometry</li></ul>
         </article>
       </div>
-    </details>
+    </div>
   </section>
 
   <section id="services" class="container section-gap services">
@@ -200,7 +200,7 @@
         <article class="subdealer-card"><h4>Qiagen</h4><p class="parent">QIAGEN</p><p>Sample and assay technologies for molecular diagnostics.</p></article>
         <article class="subdealer-card"><h4>Kimberly-Clark</h4><p class="parent">Kimberly-Clark Professional</p><p>Lab safety and personal protective equipment.</p></article>
       </div>
-    </details>
+    </div>
   </section>
 
 
@@ -241,8 +241,12 @@
       </div>
 
       <div>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <h3>Send Us a Message</h3>
+          <div id="formAlert" class="alert alert-default is-hidden" role="alert" aria-live="polite">
+            <h5 class="alert-title">Message Sent!</h5>
+            <div class="alert-description"><p>Thank you for reaching out. Our team will get back to you within 24 hours.</p></div>
+          </div>
           <label>Full Name<input type="text" placeholder="Your Name" required /></label>
           <label>Email Address<input type="email" placeholder="your@email.com" required /></label>
           <label>Phone Number<input type="tel" placeholder="+91 XXXXX XXXXX" required /></label>
@@ -250,8 +254,18 @@
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
-    </details>
+    </div>
   </section>
+
+  <dialog id="submitDialog" class="alert-dialog">
+    <div class="alert-content">
+      <h3>Message Sent!</h3>
+      <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+      <div class="alert-actions">
+        <button type="button" class="btn alert-cancel" id="dialogClose">Close</button>
+      </div>
+    </div>
+  </dialog>
 
   <footer class="footer">
     <div class="container footer-grid">
@@ -279,5 +293,28 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const submitDialog = document.getElementById('submitDialog');
+    const dialogClose = document.getElementById('dialogClose');
+
+    if (contactForm && submitDialog) {
+      contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        submitDialog.showModal();
+        contactForm.reset();
+        const formAlert = document.getElementById('formAlert');
+        if (formAlert) formAlert.classList.remove('is-hidden');
+      });
+    }
+
+    if (dialogClose && submitDialog) {
+      dialogClose.addEventListener('click', function () {
+        submitDialog.close();
+      });
+    }
+  </script>
+
 </body>
 </html>
